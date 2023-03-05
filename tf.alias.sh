@@ -1,0 +1,5 @@
+alias tf init="terraform init"
+alias tf apply="terraform apply"
+alias tf console="terraform console"
+alias tf destroy="terraform destroy"
+alias tf plan="terraform plan"

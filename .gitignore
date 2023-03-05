@@ -1,0 +1,9 @@
+## ENV
+*.tfvars
+out.terraform
+
+## Terraform out file
+.terraform
+*.lock.hcl
+*.tfstate
+*.backup
