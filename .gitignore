@@ -4,6 +4,10 @@ out.terraform
 
 ## Terraform out file
 .terraform
-*.lock.hcl
+*.lock.*
 *.tfstate
 *.backup
+
+## SSH
+zkfmapf123
+zkfmapf123.pub

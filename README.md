@@ -18,6 +18,9 @@
     terraform destroy
     terraform plan
     terraform plan -out out.terraform
+
+    - SSH KEY : SSH KEY 만들기
+    ssh-keygen -f name
 ```
 
 ## Refernece
