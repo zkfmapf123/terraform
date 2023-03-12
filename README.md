@@ -21,13 +21,18 @@
 
     - SSH KEY : SSH KEY 만들기
     ssh-keygen -f name
+
+    - AWS 자격증명 확인
+    cat ~/.aws/credentials
 ```
 
-## Function
+## Basic-Terraform
 
-> Terraform Backend
+- terraform-versioning (.tfstate)
 
-- terraform.tfstate
+## aws-ec2
+
+![scrennshot](./aws-ec2/public/vpc.jpg)
 
 ## Refernece
 
