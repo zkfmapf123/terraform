@@ -23,6 +23,12 @@
     ssh-keygen -f name
 ```
 
+## Function
+
+> Terraform Backend
+
+- terraform.tfstate
+
 ## Refernece
 
 - https://cloud-images.ubuntu.com/locator/ec2/

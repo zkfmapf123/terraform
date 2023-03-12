@@ -23,7 +23,9 @@ resource "aws_instance" "dev_server" {
         inline = [
             "chmod +x /tmp/script.sh",
             "sudo /tmp/script.sh",
-            "echo hello world"
+            "echo hello world",
+            "echo ${aws_instance.dev_server.private_ip} > /tmp/private_ip}",
+            "echo ${aws_instance.dev_server.public_ip} > /tmp/public_ip}"
         ]
     }
 
@@ -35,3 +37,12 @@ resource "aws_instance" "dev_server" {
         private_key = "${file("${var.PRIVATE_KEY_PATH}")}"
     }
 } 
+
+# etc. output resource id
+output "private_ip" {
+    value = "${aws_instance.dev_server.public_ip}"
+}
+
+output "public_ip" {
+    value = "${aws_instance.dev_server.private_ip}"
+}

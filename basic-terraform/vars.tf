@@ -19,7 +19,7 @@ variable "PUBLIC_KEY_PATH" {
 }
 
 variable "PRIVATE_KEY_PATH" {
-  
+
 }
 
 variable "AMIS" {
