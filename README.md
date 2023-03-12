@@ -34,6 +34,55 @@
 
 ![scrennshot](./aws-ec2/public/vpc.jpg)
 
+## terraform-syntax
+
+> Interpolation
+
+```
+    // Syntax
+    var.name
+    var.friends['leedonggyu']
+
+    // Interpolate
+    "${var.name}"
+    "${lookup(var.friends, "leedonggyu")}"
+
+```
+
+> if/else
+
+```
+    "${var.name == "leedonggyu" ? true : false}"
+
+    // Example
+
+```
+
+> Advanced Terraform Function
+
+```
+    // file
+    "${file("leedonggyu.pub")}"
+
+    // basename
+    basename("/home/dk/file.txt")
+
+    // coalesce
+    host = coalesce(self.public_ip, self.private_ip)
+
+    // element -> Return a index(seconds parameter)
+    element(module.vpc.public_subents, count.index)
+
+    // ...
+```
+
+> for, for-each
+
+```
+    [for s in ["a","b"]] : upper(s)]
+```
+
 ## Refernece
 
 - https://cloud-images.ubuntu.com/locator/ec2/
+- https://developer.hashicorp.com/terraform/language/v1.1.x/configuration-0-11/interpolation
