@@ -82,6 +82,30 @@
     [for s in ["a","b"]] : upper(s)]
 ```
 
+## Terraform-folder-architecture
+
+- Folder-Architecture
+
+```
+    - dev
+        - dev.tf
+        - prodivder.tf
+        - vars.tf
+        - versions.tf
+    - prod
+        - prod.tf
+        - provider.tf
+        - vars.tf
+        - versions.tf
+    - modules
+        - instances
+            - instance.tf
+            - versions.tf
+        - vpc
+            - vpc.tf
+            - instance.tf
+```
+
 ## Refernece
 
 - https://cloud-images.ubuntu.com/locator/ec2/
