@@ -1,112 +1,47 @@
-# Terraform practice
+# Terraform
 
-## Execute
+## tf-docker
 
-```
-    brew install hashicorp/tap/terraform
-    brew update
+- deploy docker use terraform
 
-    terraform --version
-    terraform -help
-```
+## tf-playground
 
-## Command
+- use variables use terraform console
 
 ```
-    terraform init
-    terraform apply
-    terraform destroy
-    terraform plan
-    terraform plan -out out.terraform
+    terraform console
 
-    - SSH KEY : SSH KEY 만들기
-    ssh-keygen -f name
-
-    - AWS 자격증명 확인
-    cat ~/.aws/credentials
+    >> var.myVar
+    >> var.myMap["name"]
+    >> var.myList[0]
+    >> slice(var.myList,0,1)
 ```
 
-## Basic-Terraform
+## tf-advance
 
-- terraform-versioning (.tfstate)
+- vars를 사용한 terraform 구조 정의 (Simple)
 
-## aws-ec2
+![tfVars](./public/tfvars.png)
 
-![scrennshot](./aws-ec2/public/vpc.jpg)
+- provider
 
-## terraform-syntax
+  - provider를 정의
 
-> Interpolation
+- instance
 
-```
-    // Syntax
-    var.name
-    var.friends['leedonggyu']
+  - 인스턴스를 정의
 
-    // Interpolate
-    "${var.name}"
-    "${lookup(var.friends, "leedonggyu")}"
+- vars.tf
 
-```
+  - \*.tfvars의 해당하는 변수네이밍
 
-> if/else
+- terraform.tfvars
 
-```
-    "${var.name == "leedonggyu" ? true : false}"
+  - 변수의 값을 저장
 
-    // Example
-
-```
-
-> Advanced Terraform Function
-
-```
-    // file
-    "${file("leedonggyu.pub")}"
-
-    // basename
-    basename("/home/dk/file.txt")
-
-    // coalesce
-    host = coalesce(self.public_ip, self.private_ip)
-
-    // element -> Return a index(seconds parameter)
-    element(module.vpc.public_subents, count.index)
-
-    // ...
-```
-
-> for, for-each
-
-```
-    [for s in ["a","b"]] : upper(s)]
-```
-
-## Terraform-folder-architecture
-
-- Folder-Architecture
-
-```
-    - dev
-        - dev.tf
-        - prodivder.tf
-        - vars.tf
-        - versions.tf
-    - prod
-        - prod.tf
-        - provider.tf
-        - vars.tf
-        - versions.tf
-    - modules
-        - instances
-            - instance.tf
-            - versions.tf
-        - vpc
-            - vpc.tf
-            - instance.tf
-```
-
-## Refernece
-
-- https://cloud-images.ubuntu.com/locator/ec2/
-- https://developer.hashicorp.com/terraform/language/v1.1.x/configuration-0-11/interpolation
+  ```
+    // terraform.tfvars
+    AWS_ACCESS_KEY = ""
+    AWS_SECRET_KEY = ""
+    AWS_REGION = "ap-northeast-2"
+  ```
