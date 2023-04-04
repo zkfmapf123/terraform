@@ -4,7 +4,6 @@ out.terraform
 
 ## Terraform out file
 .terraform
-*.lock.*
 *.tfstate
 *.backup
 

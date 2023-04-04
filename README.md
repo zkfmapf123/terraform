@@ -98,3 +98,65 @@
   ~/dev terraform init
   ~/prod terraform init
 ```
+
+## tf-state
+
+- 상태 조작 예시
+
+```
+  terraform init
+  terraform apply
+```
+
+# In Terraform File
+
+## .terraform.lock.hcl
+
+- 사용중인 공급자와 모듈의 버전을 추적
+- git에 commit 되어야 함 (pacakge.lock.json 과 같은 역할)
+
+```hcl
+  // 공급자 변경
+
+  terraform {
+    required_providers {
+      aws = {
+        version = ">=3.20.0"
+      }
+    }
+
+    required_version = ">=0.14"
+  }
+```
+
+## Terraform State Command
+
+> terraform state list
+
+- 리소스 나열
+
+> terraform state mv
+
+- 상태의 항목을 이동
+- 이름 수정, 모듈 위치 수정
+
+> terraform state pull
+
+- 전체상태를 표시 (Print.ALL)
+
+> terraform state push
+
+- 상태 재정의
+
+> terraform state replace-provider
+
+- 공급자 대체
+- ex) 0.12 -> 0.13 업그레이드 시
+
+> terraform state rm
+
+- 항목 제거
+
+> terraform state show
+
+- 상태의 있는 항목 나열
