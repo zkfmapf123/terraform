@@ -38,10 +38,19 @@
   - 변수의 값을 저장
 
   ```
-    // terraform.tfvars
+    // 1. terraform.tfvars
     AWS_ACCESS_KEY = ""
     AWS_SECRET_KEY = ""
     AWS_REGION = "ap-northeast-2"
+
+    // 2. DEV OR PROD 설정
+    terraform apply -var ENV=dev
+
+    // 3. Stored Function
+    basename("/home/leedonggyu/file.txt") >> file.txt 경로의 마지막 요소의 파일이름 반환
+    coalesce("","","hello) >> hello 값이 있는것만 반환
+    element(module.vpc.public_subnets, count.index) >> module.vpc.public_subnest[count.index]
+    ... more homepage
   ```
 
 ## tf-vpc

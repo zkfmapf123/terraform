@@ -8,6 +8,14 @@ resource "aws_instance" "example" {
     ami = "${lookup(var.AMIS, var.AWS_REGION)}"
     instance_type = "t2.micro"
 
+    # Use DEV OR PROD 
+    subnet_id = "${var.ENV == "prod" ? module.vpc-prod.public_subnets[0] : module.vpc-dev.public_subnets[0]}"
+
+    # USE DEV OR PROD
+    vpc_security_group_ids = [
+        "${var.ENV == "prod" ? module.sg-prod.allow-ssh.id : module.sg-dev.allow-ssh.id}"
+    ]
+
     # File Upload
     provisioner "file" {
         source = "script.sh"

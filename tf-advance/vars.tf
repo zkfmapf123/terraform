@@ -19,3 +19,8 @@ variable "PATH_TO_PRIVATE_KEY" {}
 variable "INSTANCE_USERNAME" {
     default = "ubuntu"
 }
+
+## Env
+variable "ENV" {
+    default = "dev"
+}
