@@ -21,8 +21,6 @@
 
 - vars를 사용한 terraform 구조 정의 (Simple)
 
-![tfVars](./public/tfvars.png)
-
 - provider
 
   - provider를 정의
