@@ -43,3 +43,16 @@
     AWS_SECRET_KEY = ""
     AWS_REGION = "ap-northeast-2"
   ```
+
+## tf-vpc
+
+![vpc](./public/vpc.png)
+
+- vpc.tf
+  - Mapping Route Table == Public Subnet
+- nat.tf
+  - Mapping Route Table == Private Subnet
+
+## tf-vpc-ec2
+
+- VPC + EC2 use terraform
