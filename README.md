@@ -55,4 +55,12 @@
 
 ## tf-vpc-ec2
 
-- VPC + EC2 use terraform
+- VPC
+  - vpc.tf
+  - nat.tf
+- EBS
+  - instance.tf
+- EIP
+  - instance.tf
+- RDS
+  - rds.tf
