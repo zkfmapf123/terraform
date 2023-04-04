@@ -66,3 +66,9 @@
   - rds.tf
 
 ## tf-iam
+
+- set iam use terraform
+
+## tf-elasticBeanstalk
+
+- setting ealsticBeanstalk use terraform
