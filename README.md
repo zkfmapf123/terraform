@@ -81,3 +81,20 @@
 ## tf-elasticBeanstalk
 
 - setting ealsticBeanstalk use terraform
+
+## tf-architecture
+
+- best practice terraform folder architecture
+
+![folder](./public/folder.png)
+
+```
+  modules
+    instance (module로 관리)
+    vpc (module로 관리)
+  dev
+  prod
+
+  ~/dev terraform init
+  ~/prod terraform init
+```
